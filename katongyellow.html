@@ -8,7 +8,6 @@
     />
 
     <title>UFC Fight Winner Prediction</title>
-
     <style>
       body {
         margin: 0;
@@ -40,9 +39,6 @@
         color: #f5c518;
         border-bottom: 1px solid #888;
         padding-bottom: 6px;
-      }
-      h4 {
-        color: #f5c518;
       }
 
       label {
@@ -85,7 +81,6 @@
 
       .form-group {
         margin-bottom: 20px;
-        text-align: center;
       }
 
       button {
@@ -159,17 +154,6 @@
         width: 150px;
         height: auto;
       }
-      .ufc-heading {
-        font-family: "Bebas Neue", sans-serif;
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: bold;
-        letter-spacing: 0.05em;
-        color: white;
-      }
-      .ufc-heading span {
-        color: white; /* Tailwind's red-500 */
-      }
     </style>
 
     <script>
@@ -185,7 +169,6 @@
       }
     </script>
   </head>
-
   <body>
     {% if prediction %}
     <div id="resultModal" class="modal">
@@ -198,86 +181,32 @@
     {% endif %}
     <div style="text-align: center; margin-top: 30px">
       <img
-        src="{{ url_for('static', filename='UFC-Logo-1.svg') }}"
+        src="{{ url_for('static', filename='UFC_logo.svg') }}"
         alt="UFC Logo"
-        style="width: 250px; height: auto"
+        style="width: 150px; height: auto"
       />
     </div>
 
     <div class="container">
-      <h1 class="ufc-heading">
-        <span>Fight Night Predictor</span>
+      <h1
+        className="text-center text-4xl sm:text-5xl font-bold tracking-wide text-white"
+        style="font-family: Bebas Neue"
+      >
+        <span className="text-red-500"></span>UFC Fight Winner Predictor
       </h1>
-      <!-- Prediction Mode Dropdown -->
-      <div style="display: flex; justify-content: center">
-        <div class="form-group" style="text-align: center">
-          <label
-            for="mode"
-            style="
-              display: block;
-              margin-bottom: 5px;
-              font-size: 1rem;
-              font-weight: 700;
-              color: white;
-            "
-          >
-            Select prediction mode:
-          </label>
-          <select
-            id="mode"
-            onchange="toggleForm()"
-            style="
-              padding: 10px 15px;
-              border-radius: 4px;
-              color: white;
-              font-weight: bold;
-              min-width: 220px;
-            "
-          >
-            <option value="simple">Simple</option>
-            <option value="full">Advanced</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label for="mode">Select Prediction Mode</label>
+        <select id="mode" onchange="toggleForm()">
+          <option value="simple">Simple Prediction</option>
+          <option value="full">Full Prediction</option>
+        </select>
       </div>
-
-      <!-- Title Bout Radio Buttons -->
-      <div style="display: flex; justify-content: center">
-        <div class="form-group" style="text-align: center">
-          <label
-            style="
-              display: block;
-              margin-bottom: 12px;
-              font-size: 1rem;
-              font-weight: 700;
-              color: white;
-            "
-            >Is title bout?</label
-          >
-          <div style="display: inline-flex; gap: 35px; align-items: center">
-            <label style="color: white; font-weight: bold; cursor: pointer">
-              <input
-                type="radio"
-                id="titleNo"
-                name="is_title_bout"
-                value="0"
-                required
-                style="accent-color: #ff0000"
-              />
-              No
-            </label>
-            <label style="color: white; font-weight: bold; cursor: pointer">
-              <input
-                type="radio"
-                id="titleYes"
-                name="is_title_bout"
-                value="1"
-                required
-                style="accent-color: #ff0000"
-              />
-              Yes
-            </label>
-          </div>
-        </div>
+      <div class="form-group">
+        <label>Is Title Bout?</label>
+        <select name="is_title_bout" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select>
       </div>
 
       {% if error %}
@@ -413,9 +342,7 @@
           id="prediction_mode_input"
           value="simple"
         />
-        <div style="display: flex; justify-content: center; margin-top: 15px">
-          <button type="submit">Predict Winner</button>
-        </div>
+        <button type="submit">Predict Winner</button>
       </form>
     </div>
     <script>
