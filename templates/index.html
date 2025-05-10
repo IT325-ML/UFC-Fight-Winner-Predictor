@@ -2,8 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
     <title>UFC Fight Winner Prediction</title>
-    <style>
+    <!-- <style>
       body {
         margin: 0;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -121,7 +126,308 @@
         font-size: 28px;
         cursor: pointer;
       }
+    </style> -->
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #0b0c10;
+        color: #ffffff;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: #1f2833;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(215, 135, 73, 0.2);
+        border: 2px solid #85682f;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #c3073f;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #c3073f;
+        padding-bottom: 8px;
+      }
+
+      h3 {
+        color: #66fcf1;
+        border-bottom: 1px solid #45a29e;
+        padding-bottom: 6px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 4px;
+        display: block;
+        color: #ffffff;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        background: #0b0c10;
+        border: 1px solid #45a29e;
+        border-radius: 6px;
+        color: #ffffff;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #66fcf1;
+        outline: none;
+      }
+
+      .form-section {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .column {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      button {
+        background: #c3073f;
+        color: #ffffff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background: #a3002d;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      select#mode {
+        width: 250px;
+        margin-top: 10px;
+        background: #1f2833;
+        color: #ffffff;
+      }
+
+      .modal {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.85);
+      }
+
+      .modal-content {
+        background-color: #1f2833;
+        margin: auto;
+        padding: 20px;
+        width: 50%;
+        border-radius: 8px;
+        text-align: center;
+        border: 2px solid #c3073f;
+        color: #ffffff;
+      }
+
+      .close {
+        float: right;
+        font-size: 28px;
+        cursor: pointer;
+        color: #ffffff;
+      }
+
+      .close:hover {
+        color: #c3073f;
+      }
+      .logo-wrapper {
+        text-align: center;
+        margin-top: 30px;
+      }
+    </style> -->
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #121212;
+        color: #ffffff;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: #1e1e1e;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05);
+        border: 1px solid #333333;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #e50914;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 2px solid #e50914;
+        padding-bottom: 8px;
+      }
+
+      h3 {
+        color: #f5c518;
+        border-bottom: 1px solid #888;
+        padding-bottom: 6px;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 4px;
+        display: block;
+        color: #ffffff;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 15px;
+        background: #0f0f0f;
+        border: 1px solid #444;
+        border-radius: 6px;
+        color: #ffffff;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #f5c518;
+        outline: none;
+      }
+
+      .form-section {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .column {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      button {
+        background: #e50914;
+        color: #ffffff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-weight: bold;
+      }
+
+      button:hover {
+        background: #b00710;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      select#mode {
+        width: 250px;
+        margin-top: 10px;
+        background: #1e1e1e;
+        color: #ffffff;
+      }
+
+      .modal {
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.85);
+      }
+
+      .modal-content {
+        background-color: #1e1e1e;
+        margin: auto;
+        padding: 20px;
+        width: 50%;
+        border-radius: 8px;
+        text-align: center;
+        border: 2px solid #e50914;
+        color: #ffffff;
+      }
+
+      .close {
+        float: right;
+        font-size: 28px;
+        cursor: pointer;
+        color: #ffffff;
+      }
+
+      .close:hover {
+        color: #e50914;
+      }
+
+      .logo-wrapper {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .logo-wrapper img {
+        width: 150px;
+        height: auto;
+      }
+      .ufc-heading {
+        font-family: "Bebas Neue", sans-serif;
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        color: white;
+      }
+      .ufc-heading span {
+        color: white; /* Tailwind's red-500 */
+      }
     </style>
+
     <script>
       function toggleForm() {
         const mode = document.getElementById("mode").value;
@@ -145,22 +451,92 @@
       </div>
     </div>
     {% endif %}
-    <div class="container">
-      <h2>UFC Fight Winner Predictor</h2>
+    <div style="text-align: center; margin-top: 30px">
+      <img
+        src="{{ url_for('static', filename='UFC-Logo-1.svg') }}"
+        alt="UFC Logo"
+        style="width: 250px; height: auto"
+      />
+    </div>
 
-      <div class="form-group">
-        <label for="mode">Select Prediction Mode</label>
-        <select id="mode" onchange="toggleForm()">
-          <option value="simple">Simple Prediction</option>
-          <option value="full">Full Prediction</option>
-        </select>
+    <div class="container">
+      <h1 class="ufc-heading">
+        <span>Who’s Gonna Win?</span>
+      </h1>
+      <!-- Prediction Mode Dropdown -->
+      <div style="display: flex; justify-content: center; margin-bottom: 30px">
+        <div class="form-group" style="text-align: center">
+          <label
+            for="mode"
+            style="
+              display: block;
+              margin-bottom: 10px;
+              font-size: 1.2rem;
+              font-weight: 700;
+              color: white;
+            "
+          >
+            Select Prediction Mode
+          </label>
+          <select
+            id="mode"
+            onchange="toggleForm()"
+            style="
+              padding: 10px 15px;
+              font-size: 1rem;
+              border: 2px solid #ff0000;
+              border-radius: 4px;
+              background-color: #1a1a1a;
+              color: white;
+              font-weight: bold;
+              min-width: 220px;
+            "
+          >
+            <option value="simple">Simple Prediction</option>
+            <option value="full">Full Prediction</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Is Title Bout?</label>
-        <select name="is_title_bout" required>
-          <option value="0">No</option>
-          <option value="1">Yes</option>
-        </select>
+
+      <!-- Title Bout Radio Buttons -->
+      <div style="display: flex; justify-content: center">
+        <div class="form-group" style="text-align: center">
+          <label
+            style="
+              display: block;
+              margin-bottom: 12px;
+              font-size: 1.2rem;
+              font-weight: 700;
+              color: white;
+            "
+          >
+            Is Title Bout?
+          </label>
+          <div style="display: inline-flex; gap: 40px; align-items: center">
+            <label style="color: white; font-weight: bold; cursor: pointer">
+              <input
+                type="radio"
+                id="titleNo"
+                name="is_title_bout"
+                value="0"
+                required
+                style="margin-right: 8px; accent-color: #ff0000"
+              />
+              No
+            </label>
+            <label style="color: white; font-weight: bold; cursor: pointer">
+              <input
+                type="radio"
+                id="titleYes"
+                name="is_title_bout"
+                value="1"
+                required
+                style="margin-right: 8px; accent-color: #ff0000"
+              />
+              Yes
+            </label>
+          </div>
+        </div>
       </div>
 
       {% if error %}
