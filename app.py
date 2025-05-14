@@ -51,7 +51,7 @@ def predict():
         r_stance_one_hot = stance_to_one_hot(r_stance, 'r_stance')
         b_stance_one_hot = stance_to_one_hot(b_stance, 'b_stance')
 
-        if mode == 'simple':
+        if mode == 'simple': # fewer features # Simple Prediction Mode
             features = [
                 is_title_bout,
                 r_wins_total, r_losses_total, r_age, r_height, r_weight,
@@ -60,7 +60,7 @@ def predict():
                 *b_stance_one_hot
             ]
             prediction = model_few.predict([features])[0]
-        else:  # full
+        else:  # full features # Advanced Prediction Mode
             r_reach = float(request.form.get('r_reach'))
             r_SLpM_total = float(request.form.get('r_SLpM_total'))
             r_SApM_total = float(request.form.get('r_SApM_total'))
